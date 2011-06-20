@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Juice;
+﻿using System.Web.Mvc;
 using Juice.Controllers;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Juice.Tests.Controllers
 {
@@ -13,13 +8,14 @@ namespace Juice.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
+        [Ignore]
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            var controller = new HomeController();
 
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            var result = controller.Index() as ViewResult;
 
             // Assert
             Assert.AreEqual("Welcome to ASP.NET MVC!", result.ViewBag.Message);
@@ -29,10 +25,10 @@ namespace Juice.Tests.Controllers
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            var controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            var result = controller.About() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
